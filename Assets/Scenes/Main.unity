@@ -391,6 +391,8 @@ GameObject:
   - component: {fileID: 266574804}
   - component: {fileID: 266574803}
   - component: {fileID: 266574802}
+  - component: {fileID: 266574806}
+  - component: {fileID: 266574805}
   m_Layer: 6
   m_Name: Robot
   m_TagString: Untagged
@@ -448,6 +450,42 @@ Transform:
   - {fileID: 2146621241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 157.214, z: 0}
+--- !u!136 &266574805
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266574801}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45
+  m_Height: 0.9427874
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.028606296, z: 0}
+--- !u!114 &266574806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266574801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e77a87cfbc5499448ebbf5b3e8cd731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnmemyHealth
+  startingHealth: 3
 --- !u!1 &354387188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,6 +1962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c857884d8ac0a9e4092012bbf2c14830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  damageAmount: 1
 --- !u!1 &2146621240
 GameObject:
   m_ObjectHideFlags: 0
