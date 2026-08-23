@@ -812,6 +812,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &856167828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856167829}
+  - component: {fileID: 856167830}
+  m_Layer: 3
+  m_Name: Active Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &856167829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856167828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2001588171}
+  m_Father: {fileID: 1456061016}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &856167830
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856167828}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01dddedb46901844c886f933d2c84ad5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &922975418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1801,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2001588171}
+      addedObject: {fileID: 856167829}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!1 &2001588170
@@ -1775,13 +1830,13 @@ Transform:
   m_GameObject: {fileID: 2001588170}
   serializedVersion: 2
   m_LocalRotation: {x: 0.026415003, y: -0.6730849, z: 0.028983172, w: -0.73852485}
-  m_LocalPosition: {x: 0.15, y: -0.18, z: 0.4}
+  m_LocalPosition: {x: 0.15, y: -0.18000007, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 770902980}
   - {fileID: 1493079869019473249}
-  m_Father: {fileID: 1456061016}
+  m_Father: {fileID: 856167829}
   m_LocalEulerAnglesHint: {x: 0, y: -275.30798, z: -4.495}
 --- !u!114 &2001588172
 MonoBehaviour:
@@ -1795,6 +1850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c857884d8ac0a9e4092012bbf2c14830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  hitVFXPrefab: {fileID: 8589401659042247611, guid: 6ff126a4ccbb7bf41bdf36ae7f52a52e, type: 3}
+  animator: {fileID: 856167830}
   muzzleFlash: {fileID: 1493079869034619029}
   damageAmount: 1
 --- !u!4 &1493079869019473249 stripped
@@ -1873,6 +1930,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2001588171}
     m_Modifications:
     - target: {fileID: 788683363738364448, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 788683363738364448, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -1886,6 +1947,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 788683363738364448, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
       propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 788683363738364448, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
+      propertyPath: startDelay.scalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 788683363738364448, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
@@ -1971,7 +2036,7 @@ PrefabInstance:
     - target: {fileID: 2055758662218655425, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6ec62f8b9c8b01b42bdbb5e23ff82ca4, type: 2}
+      objectReference: {fileID: 2100000, guid: 03a6895b505702d418fcba453851e043, type: 2}
     - target: {fileID: 2083743240287988315, guid: 288d7a4659d645d4aa7b37b3d0c1381b, type: 3}
       propertyPath: m_Name
       value: Muzzle Flash
