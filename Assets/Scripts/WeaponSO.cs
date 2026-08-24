@@ -5,4 +5,5 @@ public class WeaponSO : ScriptableObject
 {
     public int damage = 1;
     public float fireRate = 0.5f;
+    public GameObject HitVFXPrefab;
 }

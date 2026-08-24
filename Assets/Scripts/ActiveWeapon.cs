@@ -1,0 +1,49 @@
+using UnityEngine;
+using StarterAssets;
+
+public class ActiveWeapon : MonoBehaviour
+{
+    [SerializeField] WeaponSO weaponSO;
+    
+    Animator animator;
+    StarterAssetsInputs starterAssetsInputs;
+    Weapon currentWeapon;
+
+    const string shoot_trigger = "Shoot";
+
+    float timeSinceLastShot = 0f;
+
+    void Awake()
+    {
+        starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
+        animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        currentWeapon = GetComponentInChildren<Weapon>(); 
+    }
+    void Update()
+    {
+        timeSinceLastShot += Time.deltaTime;
+        HandleShoot();
+    }
+
+    private void HandleShoot()
+    {
+        if (!starterAssetsInputs.shoot)
+        {
+            return;
+        }
+
+        if(timeSinceLastShot >= weaponSO.fireRate)
+        {
+            currentWeapon.Shoot(weaponSO);
+            animator.Play(shoot_trigger, 0, 0f);
+            timeSinceLastShot = 0f;
+        }
+
+        starterAssetsInputs.ShootInput(false);
+
+    }
+}
