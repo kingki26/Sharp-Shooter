@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9253fb00bfac5f3408eda1875589c562, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
+  weaponPrefab: {fileID: 8958443779027620426, guid: d76f6c5d860aa2446944936799d20b29, type: 3}
   damage: 1
   fireRate: 0.5
   HitVFXPrefab: {fileID: 8589401659042247611, guid: 6ff126a4ccbb7bf41bdf36ae7f52a52e, type: 3}
+  isAutomatic: 0
