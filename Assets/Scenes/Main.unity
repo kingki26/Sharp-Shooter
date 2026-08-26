@@ -16897,11 +16897,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFollowCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 3057804047750754502, guid: a361be19a62aef94e965b3e920fd7776, type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 4135013737123133844}
+    - target: {fileID: 3057804047750754502, guid: a361be19a62aef94e965b3e920fd7776, type: 3}
+      propertyPath: Target.CustomLookAtTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9221039978293653769, guid: a361be19a62aef94e965b3e920fd7776, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 4135013737123133844}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9221039978293653769, guid: a361be19a62aef94e965b3e920fd7776, type: 3}
+    - {fileID: 676477281688987715, guid: a361be19a62aef94e965b3e920fd7776, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
