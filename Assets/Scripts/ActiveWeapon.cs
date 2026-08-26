@@ -1,9 +1,12 @@
 using UnityEngine;
 using StarterAssets;
+using Unity.Cinemachine;
 
 public class ActiveWeapon : MonoBehaviour
 {
     [SerializeField] WeaponSO weaponSO;
+    [SerializeField] CinemachineCamera playerFollowCamera;
+    [SerializeField] GameObject zoomVignette;
     
     Animator animator;
     StarterAssetsInputs starterAssetsInputs;
@@ -12,11 +15,13 @@ public class ActiveWeapon : MonoBehaviour
     const string shoot_trigger = "Shoot";
 
     float timeSinceLastShot = 0f;
+    float defaultFOV;
 
     void Awake()
     {
         starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
+        defaultFOV = playerFollowCamera.Lens.FieldOfView;
     }
 
     void Start()
@@ -69,11 +74,13 @@ public class ActiveWeapon : MonoBehaviour
 
         if (starterAssetsInputs.zoom)
         {
-            Debug.Log("Zooming in");
+            playerFollowCamera.Lens.FieldOfView = weaponSO.ZoomAmount;
+            zoomVignette.SetActive(true);
         }
         else
         {
-            Debug.Log("Not Zooming in");
+            playerFollowCamera.Lens.FieldOfView = defaultFOV;
+            zoomVignette.SetActive(false);
         }
 
     }
