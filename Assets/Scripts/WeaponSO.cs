@@ -8,4 +8,5 @@ public class WeaponSO : ScriptableObject
     public float fireRate = 0.5f;
     public GameObject HitVFXPrefab;
     public bool isAutomatic = false;
+    public bool CanZoom = false;
 }
