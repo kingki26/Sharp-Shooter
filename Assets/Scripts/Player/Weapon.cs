@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, interactionLayers, QueryTriggerInteraction.Ignore))
         {
             Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity);
-            EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+            EnemyHealth enemyHealth = hit.collider.GetComponentInParent<EnemyHealth>();
             enemyHealth?.TakeDamge(weaponSO.damage);
         }
     }
