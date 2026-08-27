@@ -1,3 +1,4 @@
+using StarterAssets;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +36,8 @@ public class PlayerHealth : MonoBehaviour
         weaponCamera.parent = null;
         deathCamera.Priority = gameOverCameraPriority;
         gameOverContainer.SetActive(true);
+        StarterAssetsInputs starterAssetsInputs = FindAnyObjectByType<StarterAssetsInputs>();
+        starterAssetsInputs.SetCursorState(false);
         Destroy(this.gameObject);
     }
 
